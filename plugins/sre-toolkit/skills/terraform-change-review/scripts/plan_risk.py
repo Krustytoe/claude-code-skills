@@ -60,13 +60,14 @@ def _as_list(value) -> list:
 
 
 def classify_action(actions: list[str]) -> str:
-    if actions in (["delete", "create"], ["create", "delete"]):
+    a = frozenset(actions)
+    if a == {"delete", "create"}:
         return "replace"
-    if actions == ["delete"]:
+    if a == {"delete"}:
         return "delete"
-    if actions == ["create"]:
+    if a == {"create"}:
         return "create"
-    if actions == ["update"]:
+    if a == {"update"}:
         return "update"
     return "other"  # no-op, read, forget
 

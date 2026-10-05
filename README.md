@@ -1,5 +1,7 @@
 # claude-code-skills
 
+[![CI](https://github.com/Krustytoe/claude-code-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/Krustytoe/claude-code-skills/actions/workflows/ci.yml)
+
 [Claude Code](https://claude.com/claude-code) skills for cloud infrastructure, SRE, and observability work, packaged as a plugin marketplace.
 
 They encode how I actually run these workflows: **inspect → validate → plan → approve → apply → record**, read-only by default, no secrets in transcripts, and no claiming something was tested when it wasn't.
