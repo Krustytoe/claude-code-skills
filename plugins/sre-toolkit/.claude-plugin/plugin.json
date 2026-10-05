@@ -1,0 +1,14 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "sre-toolkit",
+  "version": "0.1.0",
+  "description": "SRE and cloud-infrastructure skills: Terraform plan risk review, Prometheus alert authoring with promtool tests, structured incident triage, and AWS GovCloud partition readiness checks.",
+  "author": {
+    "name": "Tony Le",
+    "url": "https://github.com/Krustytoe"
+  },
+  "homepage": "https://github.com/Krustytoe/claude-code-skills",
+  "repository": "https://github.com/Krustytoe/claude-code-skills",
+  "license": "MIT",
+  "keywords": ["terraform", "prometheus", "sre", "incident-response", "govcloud", "aws"]
+}

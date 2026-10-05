@@ -1,0 +1,16 @@
+{
+  "name": "krustytoe-skills",
+  "owner": {
+    "name": "Tony Le"
+  },
+  "metadata": {
+    "description": "Claude Code skills for cloud infrastructure, SRE and observability work."
+  },
+  "plugins": [
+    {
+      "name": "sre-toolkit",
+      "source": "./plugins/sre-toolkit",
+      "description": "Terraform change review, Prometheus alert authoring, incident triage and GovCloud readiness skills."
+    }
+  ]
+}
