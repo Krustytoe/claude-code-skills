@@ -1,0 +1,22 @@
+name: security
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 6 * * 1" # weekly, catches newly published advisories
+
+permissions:
+  contents: read
+
+jobs:
+  trivy:
+    uses: Krustytoe/platform-workflows/.github/workflows/trivy-scan.yml@a8f5915241bbd0c5639a81428fca888cc2b79da6 # v0.1.0
+    permissions:
+      contents: read
+      security-events: write
+    with:
+      scan_type: fs
+      target: .
+      severity: HIGH,CRITICAL
