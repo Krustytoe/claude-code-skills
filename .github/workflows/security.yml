@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   trivy:
-    uses: Krustytoe/platform-workflows/.github/workflows/trivy-scan.yml@a8f5915241bbd0c5639a81428fca888cc2b79da6 # v0.1.0
+    uses: Krustytoe/platform-workflows/.github/workflows/trivy-scan.yml@fc940724641b69f16de4ce5ac0a8aaf5a3af9375 # v0.2.0
     permissions:
       contents: read
       security-events: write
