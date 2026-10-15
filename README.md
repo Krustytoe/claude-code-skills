@@ -6,6 +6,38 @@
 
 They encode how I actually run these workflows: **inspect → validate → plan → approve → apply → record**, read-only by default, no secrets in transcripts, and no claiming something was tested when it wasn't.
 
+## How it works
+
+```mermaid
+flowchart LR
+  ask["Engineer: is this safe to apply?"]
+  cc["Claude Code"]
+
+  subgraph tk["sre-toolkit plugin"]
+    tcr["terraform-change-review"]
+    paa["prometheus-alert-authoring"]
+    it["incident-triage"]
+    gov["govcloud-readiness-review"]
+  end
+
+  plan["terraform plan -out<br/>terraform show -json"]
+  risk["plan_risk.py<br/>CRITICAL / HIGH / MEDIUM<br/>addresses only, no values"]
+  sum["Approver-ready summary<br/>verdict, risks, rollback"]
+  human{"Human approves?"}
+  apply["Engineer runs apply<br/>the skill never does"]
+
+  ask --> cc
+  cc --> tcr
+  cc -.-> paa
+  cc -.-> it
+  cc -.-> gov
+  tcr --> plan
+  plan --> risk
+  risk --> sum
+  sum --> human
+  human -- "yes" --> apply
+```
+
 ## Install
 
 ```text
