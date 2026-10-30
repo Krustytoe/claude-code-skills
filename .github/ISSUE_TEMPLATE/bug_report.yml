@@ -1,0 +1,45 @@
+name: Bug report
+description: Something doesn't work the way the docs say it should
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Security issue? Don't file it here. Use private vulnerability reporting (see SECURITY.md).
+        Redact credentials, account/subscription/tenant IDs, and hostnames before posting.
+  - type: input
+    id: version
+    attributes:
+      label: Version / ref
+      description: Release tag or commit SHA you're using
+      placeholder: v0.3.0
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: Include the exact error output.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Minimal reproduction
+      description: Smallest config, input, or command sequence that shows the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Tool and provider versions, cloud and partition (e.g. AWS GovCloud, Azure Government), runner OS.
+      placeholder: |
+        Terraform 1.10.5, hashicorp/aws 6.69.1, us-gov-west-1
