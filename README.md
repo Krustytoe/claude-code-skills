@@ -1,6 +1,6 @@
 # claude-code-skills
 
-[![CI](https://github.com/Krustytoe/claude-code-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/Krustytoe/claude-code-skills/actions/workflows/ci.yml)
+[![CI](https://github.com/Krustytoe/claude-code-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/Krustytoe/claude-code-skills/actions/workflows/ci.yml) [![Release](https://img.shields.io/github/v/release/Krustytoe/claude-code-skills)](https://github.com/Krustytoe/claude-code-skills/releases/latest) [![License](https://img.shields.io/github/license/Krustytoe/claude-code-skills)](LICENSE)
 
 [Claude Code](https://claude.com/claude-code) skills for cloud infrastructure, SRE, and observability work, packaged as a plugin marketplace.
 
