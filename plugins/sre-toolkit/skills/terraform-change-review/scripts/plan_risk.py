@@ -96,7 +96,8 @@ def _world_ingress_finding(addr: str, cidrs: set[str], from_port, to_port, proto
     if str(protocol) == "-1":
         return Finding("HIGH", addr, "ingress from the internet on ALL ports/protocols")
     if _port_range_is_web_only(from_port, to_port):
-        return Finding("MEDIUM", addr, f"ingress from the internet on port {from_port} (confirm this is a public endpoint)")
+        reason = f"ingress from the internet on port {from_port} (confirm this is a public endpoint)"
+        return Finding("MEDIUM", addr, reason)
     return Finding("HIGH", addr, f"ingress from the internet on ports {from_port}-{to_port}")
 
 

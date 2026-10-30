@@ -96,7 +96,8 @@ def test_admin_attachment_any_partition():
 def test_public_s3_and_unencrypted_db():
     p = plan(
         rc("aws_s3_bucket_public_access_block.b", ["update"],
-           {"block_public_acls": True, "block_public_policy": False, "ignore_public_acls": True, "restrict_public_buckets": True}),
+           {"block_public_acls": True, "block_public_policy": False,
+            "ignore_public_acls": True, "restrict_public_buckets": True}),
         rc("aws_db_instance.reporting", ["create"], {"storage_encrypted": False, "publicly_accessible": False}),
     )
     assert severities(p) == {("HIGH", "aws_s3_bucket_public_access_block.b"), ("HIGH", "aws_db_instance.reporting")}
