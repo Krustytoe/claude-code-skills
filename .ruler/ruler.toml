@@ -1,0 +1,18 @@
+# Ruler config: https://github.com/intellectronica/ruler
+# Source of truth for AI agent instructions is .ruler/AGENTS.md.
+# Regenerate after editing:  npx @intellectronica/ruler@0.3.46 apply
+# Generated files (AGENTS.md, CLAUDE.md, .gemini/settings.json) are committed
+# so a fresh clone works with any CLI; the "ruler" CI workflow fails on drift.
+default_agents = ["claude", "codex", "gemini-cli"]
+
+[mcp]
+enabled = false
+
+[skills]
+enabled = false
+
+[gitignore]
+enabled = false
+
+[backup]
+enabled = false

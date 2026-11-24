@@ -29,9 +29,9 @@ Goal: give a human approver everything they need to say yes or no to a Terraform
    terraform show -json tfplan > tfplan.json
    ```
    `-lock=false` is fine for a read-only review; say so in the summary.
-4. **Score the plan** with the bundled analyzer:
+4. **Score the plan** with the bundled analyzer. It lives in this skill's own directory (the folder containing this `SKILL.md`), so resolve it from there rather than from an agent-specific variable:
    ```bash
-   python3 "${CLAUDE_PLUGIN_ROOT}/skills/terraform-change-review/scripts/plan_risk.py" tfplan.json
+   python3 "<this skill's directory>/scripts/plan_risk.py" tfplan.json
    ```
    It prints a Markdown table of findings (CRITICAL/HIGH/MEDIUM) plus action counts and exits non-zero at or above `--fail-on` (default `high`).
 5. **Read the risky diffs yourself.** For every CRITICAL/HIGH row, look at the actual attribute change (`terraform show tfplan | less`, or targeted `jq` on `resource_changes[] | select(.address=="...")`) and explain *why* it's happening: forced replacement from an immutable attribute, a provider upgrade, a renamed resource that needs a `moved` block, and so on.

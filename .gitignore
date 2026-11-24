@@ -4,3 +4,5 @@ __pycache__/
 .venv/
 tfplan
 tfplan.json
+# Ruler provenance markers (local only)
+*.ruler-generated

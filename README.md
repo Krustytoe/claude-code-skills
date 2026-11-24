@@ -45,6 +45,24 @@ flowchart LR
 /plugin install sre-toolkit@krustytoe-skills
 ```
 
+### Codex CLI and Gemini CLI
+
+The skills are plain [Agent Skills](https://agentskills.io) (`SKILL.md` + bundled scripts) with no Claude-only variables, so they also work in Codex and Gemini. Both read user-level skills from `~/.agents/skills/`. Copy the folders rather than symlinking them, because Codex has been reported to skip symlinked skills there.
+
+```bash
+git clone https://github.com/Krustytoe/claude-code-skills.git
+mkdir -p ~/.agents/skills
+cp -R claude-code-skills/plugins/sre-toolkit/skills/* ~/.agents/skills/
+```
+
+```powershell
+git clone https://github.com/Krustytoe/claude-code-skills.git
+New-Item -ItemType Directory -Force "$HOME\.agents\skills" | Out-Null
+Copy-Item -Recurse -Force claude-code-skills\plugins\sre-toolkit\skills\* "$HOME\.agents\skills\"
+```
+
+Restart the CLI after copying. To update, pull and copy again.
+
 ## `sre-toolkit` skills
 
 | Skill | Triggers on | What it does |
