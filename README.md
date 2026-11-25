@@ -2,6 +2,8 @@
 
 [![CI](https://github.com/Krustytoe/claude-code-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/Krustytoe/claude-code-skills/actions/workflows/ci.yml) [![Release](https://img.shields.io/github/v/release/Krustytoe/claude-code-skills)](https://github.com/Krustytoe/claude-code-skills/releases/latest) [![License](https://img.shields.io/github/license/Krustytoe/claude-code-skills)](LICENSE)
 
+> **When to use this repo:** Use this repo when you want to build or share step-by-step AI assistant playbooks (Claude Code skills) for reviewing infrastructure changes, writing monitoring alerts, triaging incidents, or checking AWS GovCloud readiness.
+
 [Claude Code](https://claude.com/claude-code) skills for cloud infrastructure, SRE, and observability work, packaged as a plugin marketplace.
 
 They encode how I actually run these workflows: **inspect → validate → plan → approve → apply → record**, read-only by default, no secrets in transcripts, and no claiming something was tested when it wasn't.
