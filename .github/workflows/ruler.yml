@@ -1,0 +1,32 @@
+name: ruler
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  drift:
+    name: agent instructions in sync with .ruler/
+    runs-on: ubuntu-latest
+    env:
+      RULER_VERSION: "0.3.46"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "24"
+      - name: Regenerate agent files
+        run: npx --yes "@intellectronica/ruler@${RULER_VERSION}" apply --local-only
+      - name: Fail on drift
+        run: |
+          drift="$(git status --porcelain)"
+          if [ -n "$drift" ]; then
+            echo "::error::Generated agent files differ from .ruler/. Run 'npx @intellectronica/ruler@${RULER_VERSION} apply' and commit the result."
+            echo "$drift"
+            git --no-pager diff
+            exit 1
+          fi
