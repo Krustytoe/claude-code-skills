@@ -11,7 +11,7 @@ Claude Code plugin marketplace (`krustytoe-skills`) that ships the `sre-toolkit`
 - `tests/` — pytest unit tests for helper scripts (`tests/test_plan_risk.py` loads `plan_risk.py` by path).
 - `pyproject.toml` — pytest and ruff configuration.
 - `release-please-config.json`, `.release-please-manifest.json` — release configuration.
-- `.github/workflows/` — `ci.yml` (lint, test, plugin validation), `security.yml` (Trivy via the `platform-workflows` reusable workflow), `release-please.yml`, `dependabot-auto-merge.yml`.
+- `.github/workflows/` — `ci.yml` (lint, test, plugin validation), `security.yml` (Trivy via the `platform-workflows` reusable workflow), `release-please.yml`, `scorecard.yml` (OpenSSF Scorecard), `dependabot-auto-merge.yml`.
 
 ## Commands
 
