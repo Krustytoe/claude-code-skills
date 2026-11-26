@@ -1,6 +1,6 @@
 # claude-code-skills
 
-[![CI](https://github.com/Krustytoe/claude-code-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/Krustytoe/claude-code-skills/actions/workflows/ci.yml) [![Release](https://img.shields.io/github/v/release/Krustytoe/claude-code-skills)](https://github.com/Krustytoe/claude-code-skills/releases/latest) [![License](https://img.shields.io/github/license/Krustytoe/claude-code-skills)](LICENSE)
+[![CI](https://github.com/Krustytoe/claude-code-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/Krustytoe/claude-code-skills/actions/workflows/ci.yml) [![Release](https://img.shields.io/github/v/release/Krustytoe/claude-code-skills)](https://github.com/Krustytoe/claude-code-skills/releases/latest) [![License](https://img.shields.io/github/license/Krustytoe/claude-code-skills)](LICENSE) [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/Krustytoe/claude-code-skills/badge)](https://scorecard.dev/viewer/?uri=github.com/Krustytoe/claude-code-skills)
 
 > **When to use this repo:** Use this repo when you want to build or share step-by-step AI assistant playbooks (Claude Code skills) for reviewing infrastructure changes, writing monitoring alerts, triaging incidents, or checking AWS GovCloud readiness.
 
